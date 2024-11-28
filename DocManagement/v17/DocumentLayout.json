@@ -1,0 +1,102 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ASP.NET\\DocManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1F6538-9455-446B-A670-37A47EC204EF}|D:\\ASP.NET\\DocManagement|d:\\asp.net\\docmanagement\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD1F6538-9455-446B-A670-37A47EC204EF}|D:\\ASP.NET\\DocManagement|solutionrelative:default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1F6538-9455-446B-A670-37A47EC204EF}|D:\\ASP.NET\\DocManagement|D:\\ASP.NET\\DocManagement\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{FD1F6538-9455-446B-A670-37A47EC204EF}|D:\\ASP.NET\\DocManagement|solutionrelative:default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1F6538-9455-446B-A670-37A47EC204EF}|D:\\ASP.NET\\DocManagement|D:\\ASP.NET\\DocManagement\\createuser.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{FD1F6538-9455-446B-A670-37A47EC204EF}|D:\\ASP.NET\\DocManagement|solutionrelative:createuser.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1F6538-9455-446B-A670-37A47EC204EF}|D:\\ASP.NET\\DocManagement|D:\\ASP.NET\\DocManagement\\default2.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{FD1F6538-9455-446B-A670-37A47EC204EF}|D:\\ASP.NET\\DocManagement|solutionrelative:default2.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1F6538-9455-446B-A670-37A47EC204EF}|D:\\ASP.NET\\DocManagement|D:\\ASP.NET\\DocManagement\\default2.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD1F6538-9455-446B-A670-37A47EC204EF}|D:\\ASP.NET\\DocManagement|solutionrelative:default2.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateUser.aspx",
+              "DocumentMoniker": "D:\\ASP.NET\\DocManagement\\CreateUser.aspx",
+              "RelativeDocumentMoniker": "CreateUser.aspx",
+              "ToolTip": "D:\\ASP.NET\\DocManagement\\CreateUser.aspx",
+              "RelativeToolTip": "CreateUser.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-10-31T15:11:38.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Default2.aspx.cs",
+              "DocumentMoniker": "D:\\ASP.NET\\DocManagement\\Default2.aspx.cs",
+              "RelativeDocumentMoniker": "Default2.aspx.cs",
+              "ToolTip": "D:\\ASP.NET\\DocManagement\\Default2.aspx.cs",
+              "RelativeToolTip": "Default2.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T14:52:59.492Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Default2.aspx",
+              "DocumentMoniker": "D:\\ASP.NET\\DocManagement\\Default2.aspx",
+              "RelativeDocumentMoniker": "Default2.aspx",
+              "ToolTip": "D:\\ASP.NET\\DocManagement\\Default2.aspx",
+              "RelativeToolTip": "Default2.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-10-31T14:47:50.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "D:\\ASP.NET\\DocManagement\\Default.aspx",
+              "RelativeDocumentMoniker": "Default.aspx",
+              "ToolTip": "D:\\ASP.NET\\DocManagement\\Default.aspx",
+              "RelativeToolTip": "Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-10-31T14:34:02.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Default.aspx.cs",
+              "DocumentMoniker": "D:\\ASP.NET\\DocManagement\\Default.aspx.cs",
+              "RelativeDocumentMoniker": "Default.aspx.cs",
+              "ToolTip": "D:\\ASP.NET\\DocManagement\\Default.aspx.cs",
+              "RelativeToolTip": "Default.aspx.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAACsAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T14:34:02.298Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

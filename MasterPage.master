@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            border: 2px solid black;
+            padding: 2px;
+            text-align: left;
+            font-size: 20px;
+        }
+        
+        .logo {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right:50px;
+          
+            
+        }
+        
+        .copyright {
+            font-size: 15px;
+            color: gray;
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+   <form id="form1" runat="server">
+   <table>
+     <tr style="background-color:saddlebrown">
+       <td colspan="2" style="text-align: center">
+            <asp:Image  ID="Logo" runat="server" ImageUrl="~/Images/num.png" Width="160px" Height="170px" CssClass="logo"/>
+             <h1 style=" display: inline-block; color:white; font-size:60px">Document Management</h1>
+         </td>
+     </tr>
+     <tr>
+         <td style="width: 80%; background-color: #f0f0f0; text-align:center; border:double;">
+            MENU:
+         </td>
+         <td style="width: 20%; background-color: #f0f0f0; text-align:center;border:double;">
+           
+             <asp:Label ID="lblLoginName" runat="server">  </asp:Label>
+             <asp:LinkButton ID="loginStatus" runat="server" Text="LogIn" OnClick="loginStatus_Click"></asp:LinkButton>
+             
+         </td>
+      </tr>
+      <tr>
+          <td colspan="2">
+              <asp:ContentPlaceHolder ID="ContentPage" runat="server" ></asp:ContentPlaceHolder>
+          </td>
+      </tr>
+      <tr>
+          <td colspan="2" style="text-align:right; background-color: wheat; color: white;">
+                  <p class="copyright">CopyRight @NUM2024</p>
+          </td>
+      </tr>
+ </table>
+ </form>
+</body>
+</html>
