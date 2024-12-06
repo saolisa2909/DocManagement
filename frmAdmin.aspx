@@ -4,7 +4,7 @@
     <style>
         body {
             font-family: 'Khmer OS Battambang';
-            font-size: 10px;
+            font-size: 15px;
             border: double;
             margin: 0;
             padding: 5px; 
@@ -12,30 +12,34 @@
 
         .Container {
             display: flex;
-            justify-content: center; /* Centers the buttons horizontally */
-            align-items: center;     /* Aligns items vertically */
-            height: 10vh;           /* Full height of the viewport */
+            justify-content: center; 
+            align-items: center;     
+            height: 10vh;         
         }
 
         .session {
-            display: flex;          /* Use flexbox to arrange children in a row */
-            gap: 20px;             /* Space between buttons */
+            display: flex;          
+            gap: 20px;             
         }
 
         .AddorEditU, .AddorEditDep {
-            flex: 0 0 auto;        /* Prevents items from shrinking or growing */
+            flex: 0 0 auto;        
         }
 
         .button {
-            border: double;
-            border-color: aqua;
-            border-radius: 30px;
-            background-color: #CC66FF; /* Keep the button background color */
-            font-weight: bold;          /* Keep the font bold */
-            font-family: 'Kh Muol';     /* Keep the font family */
-            height: 50px;               /* Set height */
-            width: 343px;               /* Set width */
-            color: white;               /* Text color */
+            border: 2px solid #008CBA;
+            border-radius:20px;
+            background-color: #CC66FF; 
+            font-weight: bold;          
+            font-family: 'Kh Muol';    
+            height: 60px;               
+            width:250px;
+            color: white; 
+            transition-duration: 0.4s;
+        }
+        .button:hover{
+             background-color: chartreuse;
+            color: black;
         }
     </style>
 </asp:Content>

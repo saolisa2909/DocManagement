@@ -36,28 +36,33 @@
         }
       
         .button-style {
+            background-color: white; 
+            color: black; 
+            border: 2px solid #008CBA;
             font-size: 18px;
             text-align: center;
             display: inline-block; 
             width: 100px; 
-            border-radius: 5px;
-            color: black; 
+            border-radius: 5px; 
             padding: 5px; 
-            border: none;
-            border: 2px;
             cursor: pointer; 
+            transition-duration: 0.4s;
+        }
+        .button-style:hover{
+            background-color: #008CBA;
+            color: white;
         }
         
         .button-container {
+            
             display: flex;
             justify-content: center; 
             gap: 20px; 
             margin-top: 10px; 
-            margin-bottom:10px;
         }
 
         .form-section, .search-section-container {
-            background-color: antiquewhite;
+            background-color:mediumpurple;
             padding: 15px; 
             margin-bottom: 15px;
             border-radius: 5px; 
@@ -98,9 +103,9 @@
     </style>
 
     <div class="header">
-        <h1>សូមជ្រើសរើស បញ្ចូល ឬ កែប្រែប៉ាតេម៉ង</h1>
+        <h1  style="font-size:30px; text-shadow: 1px 1px 2px pink;">សូមជ្រើសរើស បញ្ចូល ឬ កែប្រែ គណនីអ្នកប្រើប្រាស់</h1>
         <div style="font-size: 18px;">
-    <asp:RadioButton Id="rdAdd" runat="server" Text="បង្កើតគណនី" GroupName="Ratio" AutoPostBack="true" OnCheckedChanged="rdAdd_CheckedChanged" /> 
+    <asp:RadioButton Id="rdAdd" runat="server" Text="បង្កើតគណនី" GroupName="Ratio" OnCheckedChanged="rdAdd_CheckedChanged" AutoPostBack="true" /> 
     &nbsp; &nbsp; &nbsp;
     <asp:RadioButton Id="rdUpdate" runat="server" Text="កែប្រែគណនី" GroupName="Ratio" OnCheckedChanged="rdUpdate_CheckedChanged" AutoPostBack="true"/>
         </div>
@@ -108,50 +113,60 @@
 
     <div class="form-section">
        <div class="input-field row">
-            
-                 <div style="flex: 1; margin-right: 5px; font-family:Khmer, 'Khmer OS'; font-size:20px;">
-                <label>ឈ្មោះដេប៉ាតេម៉ង</label>
-               <asp:TextBox ID="txtLName" runat="server"></asp:TextBox>
-          </div>
+            <div style="flex: 1; margin-right: 30px; font-family:'Khmer OS'; font-size:15px;">
+                     <label>ឈ្មោះដេប៉ាតេម៉ង</label>
+                     <asp:TextBox ID="txtDep" runat="server"></asp:TextBox>
+             </div>
+             <div style="flex: 1; margin-right: 30px; font-family:'Khmer OS'; font-size:15px;">
+                    <label>ឈ្មោះកាត់ដេប៉ាតេម៉ង</label>
+                    <asp:TextBox ID="txtTDep" runat="server"></asp:TextBox>
+             </div>
         </div>
-        
-        <div class="input-field row">
-            <div style="flex: 1; margin-right: 10px; font-family:Khmer, 'Khmer OS'; font-size:20px;">
-                <label>ឈ្មោះកាត់នៃដេប៉ាតេម៉ង</label>
-                <asp:TextBox ID="txtUName" runat="server"></asp:TextBox>
+         
+         <div class="input-field row">
+           <div class="checkbox-container">
+               <asp:CheckBox ID="chkA" runat="server" OnCheckedChanged="chkA_CheckedChanged" AutoPostBack="true" Height="20px"/>   
+                &nbsp; &nbsp; &nbsp;
+                <asp:Label ID="lblBlank" runat="server" Height="25px" Width="500px" ></asp:Label>  
             </div>
+           </div>
         </div>
-        <div class="input-field row">
-            <div style="flex: 1; margin-right: 20px; font-family:Khmer, 'Khmer OS'; font-size:20px;">
-                  <label>កាលបរិច្ចេទបង្កើត</label>
-                 <asp:TextBox ID="txtCreateDate" runat="server"></asp:TextBox>
-                </div>
-        </div>
-    </div>
-        
-        
-        <div class="checkbox-container">
-            <asp:CheckBox ID="chkA" runat="server"/>                        
-        </div>
-        <div class="checkbox-container">
-            <asp:Label ID="lblBlank" runat="server" Height="25px" Width="300px" ></asp:Label>                        
+         <div class="search-section-container search-section">
+            <label style="font-weight:bold;">ការស្វែងរកគណនី</label>
+            <div class="input-field search-row">
+                <label style="width:300px;">លេខដេប៉ាតង់</label>
+                <asp:DropDownList ID="drpSearch" runat="server" Height="45px" DataSourceID="SqlDataSource1" DataTextField="DepId" DataValueField="DepId" ></asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DbDoc %>" SelectCommand="SELECT * FROM [tblDepartment]"></asp:SqlDataSource>
+                <label style="width:300px;">ឈ្មោះដេប៉ាតេម៉ង</label>
+                <asp:TextBox ID="txtSearch" runat="server" Height="40px"></asp:TextBox>
+            </div>
+            
         </div>
         
         <div class="button-container">
-            <asp:Button ID="btnInput" runat="server" Text="បញ្ចូល" CssClass="button-style"  Font-Bold="True" Font-Names="Khmer OS Bokor" Font-Size="13pt" />
-            <asp:Button ID="BtnEdit" runat="server" Text="កែប្រែ" CssClass="button-style"  Font-Bold="True" Font-Names="Khmer OS Bokor" Font-Size="13pt" />
-            <asp:Button ID="BtnDelete" runat="server" Text="សម្អាត" CssClass="button-style"  Font-Bold="True" Font-Names="Khmer OS Bokor" Font-Size="13pt"/>
+            <asp:Button ID="btnInput" runat="server" Text="បញ្ចូល" CssClass="button-style"  Font-Bold="True" Font-Names="Khmer OS Bokor" Font-Size="13pt" OnClick="btnInput_Click" />
+            <asp:Button ID="btnEdit" runat="server" Text="កែប្រែ" CssClass="button-style"  Font-Bold="True" Font-Names="Khmer OS Bokor" Font-Size="13pt" OnClick="btnEdit_Click" />
+            <asp:Button ID="btnDelete" runat="server" Text="សម្អាត" CssClass="button-style"  Font-Bold="True" Font-Names="Khmer OS Bokor" Font-Size="13pt" OnClick="btnDelete_Click"/>
+            <asp:Button ID="btnSearch" runat="server" Text="ស្វែងរក" CssClass="button-style"  Font-Bold="True" Font-Names="Khmer OS Bokor" Font-Size="13pt" OnClick="btnSearch_Click"/>
         </div>
- 
-   <div class="search-section-container search-section">
-        <label style="font-weight:bold;">ការស្វែងរដេប៉ាតេម៉ង</label>
-        <div class="input-field search-row">
-            <label style="width:300px;">ឈ្មោះដេប៉ាតេម៉ង</label>
-            <asp:TextBox ID="drpSearchType" runat="server"></asp:TextBox>
-            <label style="width:300px;">ឈ្មោះកាត់ដេប៉ាតេម៉ង</label>
-            <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>
-            <asp:Button ID="btnSearch" runat="server" Text="ស្វែងរក" CssClass="button-style" Width="180px" Height="50px" BackColor="#FF3399" Font-Bold="true" Font-Names="Khmer OS Bokor" Font-Size="13pt" />
-        </div>
+
+  
+
+    <div class="data-grid">
+
+        <asp:GridView ID="gridSearch" runat="server" BackColor="Red" BorderColor="#990099" BorderStyle="Double" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None" OnSelectedIndexChanged="gridSearch_SelectedIndexChanged" AllowCustomPaging="True" AllowPaging="True" CaptionAlign="Bottom" ForeColor="Fuchsia" HorizontalAlign="Center">
+            <Columns>
+                <asp:CommandField ShowSelectButton="True" />
+            </Columns>
+            <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
+            <HeaderStyle BackColor="#FF0066" Font-Bold="True" ForeColor="#E7E7FF" />
+            <PagerStyle BackColor="Black" ForeColor="Black" HorizontalAlign="Right" />
+            <RowStyle BackColor="#DEDFDE" ForeColor="Black" />
+            <SelectedRowStyle BackColor="Black" Font-Bold="True" ForeColor="#CC3300" />
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+            <SortedAscendingHeaderStyle BackColor="#594B9C" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+            <SortedDescendingHeaderStyle BackColor="#33276A" />
+        </asp:GridView>
     </div>
 </asp:Content>
-

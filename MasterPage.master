@@ -6,65 +6,111 @@
 <head runat="server">
     <title></title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-bottom: 20px;
         }
         
         th, td {
-            border: 2px solid black;
-            padding: 2px;
+            border: 2px solid #ccc;
+            padding: 10px;
             text-align: left;
-            font-size: 20px;
+            font-size: 18px;
         }
-        
+
+        th {
+            background-color: antiquewhite;
+            color: white;
+        }
+
+        td {
+            background-color: #ffffff;
+            color: #333;
+           
+        }
+
         .logo {
             display: inline-block;
             vertical-align: middle;
-            margin-right:50px;
-          
-            
+            margin-right: 20px;
         }
-        
+
+        h1 {
+            background: linear-gradient(to right, red, blue); 
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent; 
+             text-shadow: 5px 5px #558ABB;
+            display: inline-block;
+            font-size: 60px; 
+            margin: 0;
+        }
+
+        .menu-cell {
+            background-color: cornflowerblue;
+            text-align: center;
+            border: double;
+            font-weight: bold;
+        }
+
+        .login-cell {
+            background-color: cornflowerblue;
+            text-align: center;
+            border: double;
+        }
+
         .copyright {
-            font-size: 15px;
-            color: gray;
+            font-size: 14px;
+            color:black;
+            padding: 2px 0px;
         }
+
+        footer {
+            background-color: aqua;
+            text-align: right;
+            padding: 3px;
+        }
+
     </style>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
    <form id="form1" runat="server">
-   <table>
-     <tr style="background-color:saddlebrown">
-       <td colspan="2" style="text-align: center">
-            <asp:Image  ID="Logo" runat="server" ImageUrl="~/Images/num.png" Width="160px" Height="170px" CssClass="logo"/>
-             <h1 style=" display: inline-block; color:white; font-size:60px">Document Management</h1>
-         </td>
-     </tr>
-     <tr>
-         <td style="width: 80%; background-color: #f0f0f0; text-align:center; border:double;">
-            MENU:
-         </td>
-         <td style="width: 20%; background-color: #f0f0f0; text-align:center;border:double;">
-           
-             <asp:Label ID="lblLoginName" runat="server">  </asp:Label>
-             <asp:LinkButton ID="loginStatus" runat="server" Text="LogIn" OnClick="loginStatus_Click"></asp:LinkButton>
-             
-         </td>
-      </tr>
-      <tr>
-          <td colspan="2">
-              <asp:ContentPlaceHolder ID="ContentPage" runat="server" ></asp:ContentPlaceHolder>
-          </td>
-      </tr>
-      <tr>
-          <td colspan="2" style="text-align:right; background-color: wheat; color: white;">
-                  <p class="copyright">CopyRight @NUM2024</p>
-          </td>
-      </tr>
- </table>
- </form>
+       <table>
+           <tr>
+                <td colspan="2" style="text-align: center; background-color: aqua;">
+                    <asp:Image ID="Logo" runat="server" ImageUrl="~/Images/num.png" Width="160px" Height="170px" CssClass="logo"/>
+                    <h1>Document Management</h1>
+                </td>
+           </tr>
+           <tr>
+               <td class="menu-cell" style="width: 80%;">
+                   MENU:
+               </td>
+               <td class="login-cell" style="width: 20%;">
+                   <asp:Label ID="lblLoginName" runat="server"></asp:Label>
+                   <asp:LinkButton ID="loginStatus" runat="server" Text="LogIn" OnClick="loginStatus_Click"></asp:LinkButton>
+               </td>
+           </tr>
+           <tr>
+               <td colspan="2">
+                   <asp:ContentPlaceHolder ID="ContentPage" runat="server"></asp:ContentPlaceHolder>
+               </td>
+           </tr>
+            <tr>
+               <td colspan="2">
+                   <footer>
+                       <p class="copyright">CopyRight @NUM2024</p>
+                   </footer>
+               </td>
+           </tr>
+       </table>
+   </form>
 </body>
 </html>

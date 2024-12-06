@@ -232,22 +232,22 @@ public partial class Page1 : System.Web.UI.Page
         if (gridSearch != null && gridSearch.HeaderRow != null)
         {
             gridSearch.HeaderRow.Cells[0].Text = "";
-            gridSearch.HeaderRow.Cells[1].Text = "លេខឯកសារ";
-            gridSearch.HeaderRow.Cells[2].Text = "ឈ្មោះឯកសារ";
+            gridSearch.HeaderRow.Cells[1].Text = "លេខឯកសារ"; 
+            gridSearch.HeaderRow.Cells[2].Text = "ឈ្មោះឯកសារ"; 
             gridSearch.HeaderRow.Cells[3].Text = "កំណត់សម្គាល់";
-            gridSearch.HeaderRow.Cells[4].Text = "នាយកដ្ឋាន";
-            gridSearch.HeaderRow.Cells[5].Text = "ប្រភេទ";
+            gridSearch.HeaderRow.Cells[4].Text = "នាយកដ្ឋាន"; 
+            gridSearch.HeaderRow.Cells[5].Text = "ប្រភេទ"; 
             gridSearch.HeaderRow.Cells[6].Text = "";
 
+           
             gridSearch.HeaderRow.Cells[0].Width = 100;
             gridSearch.HeaderRow.Cells[1].Width = 200;
             gridSearch.HeaderRow.Cells[2].Width = 300;
             gridSearch.HeaderRow.Cells[3].Width = 300;
             gridSearch.HeaderRow.Cells[4].Width = 300;
             gridSearch.HeaderRow.Cells[5].Width = 80;
-        }
-       
 
+        }
     }
 
     protected void gridSearch_SelectedIndexChanged(object sender, EventArgs e)

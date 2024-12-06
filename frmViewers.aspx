@@ -16,7 +16,7 @@
             align-items: center;
         }
         .section {
-            background-color: antiquewhite;
+            background-color:mediumorchid;
             width: 100%; 
             max-width: 1430px;
             padding: 20px;
@@ -53,14 +53,19 @@
         }
         .button-style {
             height: 40px;
+            background-color:  chartreuse;
             font-size: 25px;
             width: 100px;
-            margin: 10px 0; 
-            background-color: darkviolet; 
-            color: white; 
+            margin: 10px 0;
+            color: black;
             border-radius: 5px; 
+            border: 2px solid #008CBA;
             cursor: pointer; 
-            border: none; 
+            transition-duration: 0.4s;
+        }
+        .button-style:hover{
+            background-color: #008CBA;
+            color: white;
         }
         .calendar-row {
             display: flex;
@@ -80,6 +85,7 @@
                 border: 1px solid #000;
                 text-align: center;
             }
+           
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPage" Runat="Server">
@@ -89,7 +95,7 @@
             <div class="input-row">
                 <div>
                     ប្រភេទស្វែងរក
-                    <asp:DropDownList ID="drpSearchType" runat="server" CssClass="dropdown-style" OnSelectedIndexChanged="drpSearchType_SelectedIndexChanged" AutoPostBack="true">
+                    <asp:DropDownList ID="drpSearchType" runat="server" CssClass="dropdown-style" OnSelectedIndexChanged="drpSearchType_SelectedIndexChanged" AutoPostBack="true" Height="45px">
                          <asp:ListItem Value="allDoc"> បង្ហាញទាំងអស់ </asp:ListItem>
                         <asp:ListItem Value="numDoc">លេខឯកសារ</asp:ListItem>
                         <asp:ListItem Value="nameDoc">ឈ្មោះឯកសារ</asp:ListItem>
@@ -98,13 +104,13 @@
                 </div>
                 <div>
                     អង្គភាព
-                    <asp:DropDownList ID="drpDep" runat="server" CssClass="dropdown-style" OnSelectedIndexChanged="drpDep_SelectedIndexChanged" AutoPostBack="true">
+                    <asp:DropDownList ID="drpDep" runat="server" CssClass="dropdown-style" OnSelectedIndexChanged="drpDep_SelectedIndexChanged" AutoPostBack="true" Height="45px">
                     </asp:DropDownList>
                 </div>
                 <div>
                     ប្រភេទឯកសារទាំងអស់
                    
-                    <asp:DropDownList ID="drpDocType" runat="server" CssClass="dropdown-style" OnSelectedIndexChanged="drpDocType_SelectedIndexChanged" DataSourceID="SqlDataSource1" DataTextField="DocType" DataValueField="DocTypeId" >
+                    <asp:DropDownList ID="drpDocType" runat="server" CssClass="dropdown-style" OnSelectedIndexChanged="drpDocType_SelectedIndexChanged" DataSourceID="SqlDataSource1" DataTextField="DocType" DataValueField="DocTypeId" Height="45px">
                     </asp:DropDownList> 
                    
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DbDoc %>" SelectCommand="SELECT * FROM [tblDocType]"></asp:SqlDataSource>
@@ -114,7 +120,7 @@
             <div class="input-row">
                 <div>
                     <asp:Label ID="lblSType" runat="server" Text="Label">  ឈ្មោះឯកសារ</asp:Label>
-                    <asp:TextBox ID="txtSearch" runat="server" CssClass="input-style"></asp:TextBox>
+                    <asp:TextBox ID="txtSearch" runat="server" CssClass="input-style" Height="45px"></asp:TextBox>
                 </div>
             </div>
             <div class="calendar-row">
@@ -126,10 +132,10 @@
                         TitleStyle-VerticalAlign="Middle" PrevMonthText="" BackColor="White" 
                         BorderColor="Black" Font-Names="Times New Roman" Font-Size="10pt" 
                         ForeColor="Black" NextPrevFormat="FullMonth" AutoPostBack="true" DayNameFormat="Shortest" Font-Strikeout="False" Font-Underline="True"  TitleFormat="Month" OnSelectionChanged="fromDate_SelectionChanged">
-                        <DayHeaderStyle Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" BackColor="#CCCCCC"></DayHeaderStyle>
-                        <DayStyle Width="14%" />
-                        <NextPrevStyle Font-Size="8pt" ForeColor="White" />
-                        <OtherMonthDayStyle ForeColor="#999999" />
+                        <DayHeaderStyle Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" BackColor="#FF3399"></DayHeaderStyle>
+                        <DayStyle Width="14%" BackColor="#CC66FF" ForeColor="White" />
+                        <NextPrevStyle Font-Size="8pt" ForeColor="White" BackColor="#CC00FF" />
+                        <OtherMonthDayStyle ForeColor="#999999" BackColor="#CC00FF" />
                         <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
                         <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
                         <TitleStyle VerticalAlign="Middle" BackColor="Black" 
@@ -144,10 +150,10 @@
                         DayHeaderStyle-Font-Bold="true" TitleStyle-BackColor="#993399" 
                         TitleStyle-VerticalAlign="Middle" PrevMonthText="" BackColor="White" 
                         BorderColor="Black" Font-Names="Times New Roman" Font-Size="10pt" 
-                        ForeColor="Black" NextPrevFormat="FullMonth" AutoPostBack="true" DayNameFormat="Shortest" Font-Strikeout="False" Font-Underline="True"  TitleFormat="Month" OnSelectionChanged="toDate_SelectionChanged">
-                        <DayHeaderStyle Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" BackColor="#CCCCCC"></DayHeaderStyle>
-                        <DayStyle Width="14%" />
-                        <NextPrevStyle Font-Size="8pt" ForeColor="White" />
+                        ForeColor="Black" NextPrevFormat="FullMonth" AutoPostBack="true" DayNameFormat="Shortest" Font-Strikeout="False" Font-Underline="True"  TitleFormat="Month" OnSelectionChanged="toDate_SelectionChanged" SelectedDate="11/29/2024 15:33:14">
+                        <DayHeaderStyle Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" BackColor="#FF66CC"></DayHeaderStyle>
+                        <DayStyle Width="14%" BackColor="#CC33FF" ForeColor="White" />
+                        <NextPrevStyle Font-Size="8pt" ForeColor="White" BackColor="#CC66FF" />
                         <OtherMonthDayStyle ForeColor="#999999" />
                         <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
                         <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
@@ -160,27 +166,29 @@
             </div>
             <div class="button-container">
                 <asp:Button ID="btnSearch" runat="server" Text="ស្វែងរក" CssClass="button-style" 
-                    BackColor="#993399" Font-Bold="True" Font-Names="Khmer OS Bokor" Font-Size="13pt" OnClick="btnSearch_Click" />
+                     Font-Bold="True" Font-Names="Khmer OS Bokor" Font-Size="13pt" OnClick="btnSearch_Click" />
                 <asp:Button ID="btnOpen" runat="server" Text="បើកមើល" CssClass="button-style" 
-                    BackColor="Aqua" Font-Bold="True" Font-Names="Khmer OS Bokor" Font-Size="13pt" OnClick="btnOpen_Click" />
+                    Font-Bold="True" Font-Names="Khmer OS Bokor" Font-Size="13pt" OnClick="btnOpen_Click" />
                 <asp:Button ID="btnDelete" runat="server" Text="សម្អាត" CssClass="button-style" 
-                    BackColor="#0000CC" Font-Bold="True" Font-Names="Khmer OS Bokor" Font-Size="13pt" OnClick="btnDelete_Click"  />
+                    Font-Bold="True" Font-Names="Khmer OS Bokor" Font-Size="13pt" OnClick="btnDelete_Click"  />
             </div>
             <div class="data-grid2">
-                <asp:GridView ID="gridSearch" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
-                    <Columns>
+            <asp:GridView ID="gridSearch" runat="server" BackColor="#FF99FF" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3"  HorizontalAlign="Center" GridLines="Vertical" ForeColor="Black">
+                <AlternatingRowStyle BackColor="#CCCCCC" />
+            <Columns>
                 <asp:CommandField ShowSelectButton="True" />
             </Columns>
-            <FooterStyle BackColor="White" ForeColor="#000066" />
-            <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-            <RowStyle ForeColor="#000066" />
-            <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                <EditRowStyle BackColor="#FF99FF" ForeColor="Black" HorizontalAlign="Center" VerticalAlign="Middle" />
+            <FooterStyle BackColor="#CCCCCC" />
+            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="Black" HorizontalAlign="Center" VerticalAlign="Middle" />
+            <PagerStyle BackColor="#FFCCCC" ForeColor="Black" HorizontalAlign="Center" />
+                <RowStyle BackColor="#6666FF" HorizontalAlign="Center" VerticalAlign="Middle" />
+            <SelectedRowStyle BackColor="#9900CC" Font-Bold="True" ForeColor="black" HorizontalAlign="Center" VerticalAlign="Middle" />
             <SortedAscendingCellStyle BackColor="#F1F1F1" />
-            <SortedAscendingHeaderStyle BackColor="#007DBB" />
-            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-            <SortedDescendingHeaderStyle BackColor="#00547E" />
-                </asp:GridView>
+            <SortedAscendingHeaderStyle BackColor="#808080" HorizontalAlign="Center" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" HorizontalAlign="Center" VerticalAlign="Middle" />
+            <SortedDescendingHeaderStyle BackColor="#383838" HorizontalAlign="Center" VerticalAlign="Middle" Wrap="False" />
+        </asp:GridView>
         
             </div>
         </div>

@@ -18,7 +18,7 @@
             text-align: center; 
         }
         .search-section {
-            background-color: cornflowerblue;
+            background-color:  darkorchid;
             margin-bottom: 10px;
             border: none;
             padding: 10px; 
@@ -36,7 +36,6 @@
             border: 1px solid #000;
             text-align: center;
         }
-        
       
         .button-style {
             font-size: 18px;
@@ -46,11 +45,15 @@
             border-radius: 5px;
             color: black; 
             padding: 5px; 
-            border: none;
-            border: 2px;
+           border: 2px solid #008CBA;
             cursor: pointer; 
+            transition-duration: 0.4s;
         }
         
+        .button-style:hover{
+            background-color: #008CBA;
+            color: white;
+        }
         .button-container {
             display: flex;
             justify-content: center; 
@@ -59,7 +62,7 @@
         }
 
         .form-section, .search-section-container {
-            background-color: antiquewhite;
+            background-color: darkorchid;
             padding: 15px; 
             margin-bottom: 15px;
             border-radius: 5px; 
@@ -100,7 +103,7 @@
     </style>
 
     <div class="header">
-        <h1>សូមជ្រើសរើស បញ្ចូលឯកសារ​ ឬ កែប្រែ</h1>
+        <h1 style="font-size:30px; text-shadow: 1px 1px 2px pink;">សូមជ្រើសរើស បញ្ចូលឯកសារ​ ឬ កែប្រែ</h1>
         <div style="font-size: 18px;">
     <asp:RadioButton Id="rdAdd" runat="server" Text="បញ្ចូលឯកសារ" GroupName="Ratio" AutoPostBack="true" OnCheckedChanged="rdAdd_CheckedChanged"/> 
     &nbsp; &nbsp; &nbsp;
@@ -116,13 +119,13 @@
         </div>
         
         <div class="input-field row">
-            <div style="flex: 1; margin-right: 10px; font-family:Khmer, 'Khmer OS'; font-size:20px;">
+            <div style="flex: 1; margin-right: 30px; font-family:Khmer, 'Khmer OS'; font-size:20px;">
                 <label>លេខឯកសារ</label>
                 <asp:TextBox ID="txtFileNum" runat="server"></asp:TextBox>
             </div>
-            <div style="flex: 1; margin-left: 10px;">
+            <div>
                 <label>ប្រភេទ</label>
-                <asp:DropDownList ID="drpDocTypeId" runat="server" Width="400px" Height="40px" Font-Names="Bokor" DataSourceID="SqlDataSource1" DataTextField="DocType" DataValueField="DocTypeId" >
+                <asp:DropDownList ID="drpDocTypeId" runat="server" Width="400px" Height="45px" Font-Names="Bokor" DataSourceID="SqlDataSource1" DataTextField="DocType" DataValueField="DocTypeId">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DbDoc %>" SelectCommand="SELECT * FROM [tblDocType]"></asp:SqlDataSource>
             </div>
@@ -156,7 +159,7 @@
         <label style="font-weight:bold;">ការស្វែងរក</label>
         <div class="input-field search-row">
             <label style="width:300px;">ប្រភេទឯកសារ</label>
-            <asp:DropDownList ID="drpSearch" runat="server" Placeholder="លេខឯកសារ" DataSourceID="SqlDataSource2" DataTextField="FileNumber" DataValueField="DocId" ></asp:DropDownList>
+            <asp:DropDownList ID="drpSearch" runat="server"  Placeholder="លេខឯកសារ" DataSourceID="SqlDataSource2" DataTextField="FileNumber" DataValueField="DocId" Height="40px" ></asp:DropDownList>
            
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DbDoc %>" SelectCommand="SELECT * FROM [tblDocument]"></asp:SqlDataSource>
            
@@ -168,19 +171,19 @@
 
     <div class="data-grid">
         
-        <asp:GridView ID="gridSearch" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnSelectedIndexChanged="gridSearch_SelectedIndexChanged" HorizontalAlign="Center">
+        <asp:GridView ID="gridSearch" runat="server" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" OnSelectedIndexChanged="gridSearch_SelectedIndexChanged" HorizontalAlign="Center" CellSpacing="1" GridLines="None">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
             </Columns>
-            <FooterStyle BackColor="White" ForeColor="#000066" />
-            <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" />
-            <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-            <RowStyle ForeColor="#000066" />
-            <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" VerticalAlign="Middle" />
+            <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
+            <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" HorizontalAlign="Center" />
+            <PagerStyle BackColor="#C6C3C6" ForeColor="Black" HorizontalAlign="Right" />
+            <RowStyle ForeColor="Black" BackColor="#DEDFDE" />
+            <SelectedRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" VerticalAlign="Middle" />
             <SortedAscendingCellStyle BackColor="#F1F1F1" />
-            <SortedAscendingHeaderStyle BackColor="#007DBB" />
+            <SortedAscendingHeaderStyle BackColor="#594B9C" />
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
-            <SortedDescendingHeaderStyle BackColor="#00547E" HorizontalAlign="Center" VerticalAlign="Middle" Wrap="False" />
+            <SortedDescendingHeaderStyle BackColor="#33276A" HorizontalAlign="Center" VerticalAlign="Middle" Wrap="False" />
         </asp:GridView>
         
     </div>
